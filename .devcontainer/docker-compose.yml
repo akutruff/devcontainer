@@ -11,17 +11,16 @@ services:
         # Use -bullseye variants on local arm64/Apple Silicon.
         # Optional Node.js version to install
         NODE_VERSION: "lts/*"
-    privileged: true
     volumes:
       - ../..:/workspaces:cached
       - aws-credentials:/home/node/.aws
       - project-data:/data
-
     # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity
-
     # Runs app on the same network as the database container, allows "forwardPorts" in devcontainer.json function.
+    # If you use this mode an dnot host, you need to put all the ports on the db container
     # network_mode: service:db
+    # May need to run in host mode if you run into issues with containers not being able to access each other.
     network_mode: host
 
     # Uncomment the next line to use a non-root user for all processes.

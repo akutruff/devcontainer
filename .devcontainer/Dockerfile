@@ -7,18 +7,12 @@ COPY .devcontainer/scripts/install-aws-cli.sh /tmp/user-devcontainer-scripts/
 # [Optional] Uncomment this section to install additional OS packages.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends \
-    clang \
     postgresql-client \
-    udev \    
     && bash /tmp/user-devcontainer-scripts/install-aws-cli.sh \
     && mkdir -p /home/node/.aws \
     && chown node:node /home/node/.aws \
     && mkdir -p /data \
-    && chown -R node:node /data \
-    && curl -fsSL https://raw.githubusercontent.com/platformio/platformio-core/develop/platformio/assets/system/99-platformio-udev.rules | sudo tee /etc/udev/rules.d/99-platformio-udev.rules \
-    && service udev restart \
-    && usermod -a -G dialout node \
-    && usermod -a -G plugdev node
+    && chown -R node:node /data 
 
 # [Optional] Uncomment if you want to install an additional version of node using nvm
 # ARG EXTRA_NODE_VERSION=10

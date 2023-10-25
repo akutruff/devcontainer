@@ -14,22 +14,14 @@
 				"esbenp.prettier-vscode",
 				"dbaeumer.vscode-eslint",
 				"bradlc.vscode-tailwindcss",
-				"Prisma.prisma",
 				"ms-azuretools.vscode-docker",
 				"GitHub.vscode-pull-request-github",
 				"eamodio.gitlens",
 				"pflannery.vscode-versionlens",
 				"redhat.vscode-yaml",
-				"mtxr.sqltools",
-				"mtxr.sqltools-driver-pg",
-				"ckolkman.vscode-postgres",
 				"GitHub.copilot",
 				"GitHub.copilot-labs",
-				"netcorext.uuid-generator",
-				"thebearingedge.vscode-sql-lit",
-				"nicoespeon.abracadabra",
-				"platformio.platformio-ide",
-				"ms-vscode.cpptools"
+				"nicoespeon.abracadabra"
 			],
 			"settings": {
 				"sqltools.connections": [
@@ -62,16 +54,13 @@
 	"remoteUser": "node",
 	"remoteEnv": {
 		"PGHOST": "localhost",
-		"PGPORT": "54322",
+		"PGPORT": "5432",
 		"PGUSER": "postgres",
 		"PGPASSWORD": "postgres"
 	},
 	"features": {
-		"ghcr.io/devcontainers/features/python:1": {},
+		// uncomment to add python or go find more dev container features 
+		// "ghcr.io/devcontainers/features/python:1": {},
 		"docker-from-docker": "latest"
 	}
-	// "features": {
-	// //   "docker-from-docker": "latest",
-	// //   "ghcr.io/devcontainers/features/python:1": {}
-	// }
 }
