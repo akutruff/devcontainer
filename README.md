@@ -1,2 +1,1 @@
-# devcontainer
-Dev container template
+# Dev container template
